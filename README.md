@@ -1,7 +1,7 @@
 # cs-trek
 A Parallax scrolling web experiment. (scrolling 'INTO' webpage)
 
-*website link*: [www.cs-trek.appspot.com] (www.cs-trek.appspot.com)
+*website link*: [www.cs-trek.appspot.com] (http://www.cs-trek.appspot.com)
 
 *Details*: [blog] (http://mananworks.blogspot.in/2014/06/computer-science-trek.html)
 
