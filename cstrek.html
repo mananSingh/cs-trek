@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="skrollr.js parallax css3 animation Computer Science">
+    <meta name="description" content="A brilliant blend and sync of parallax and animation to achieve 'INTO'-Parallax, unlike ever before.">
+    <meta name="author" content="Manan Singh, DSVV">
+    <title> Computer Science TREK </title>
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="static/img/favicon.ico">
+  <style>
+
+html, body{
+  padding:0; margin:0;
+  height: 100%; width: 100%;
+  background: #000 url(static/img/space.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+#dvLoading
+{
+   background:#000 url(static/img/load.gif) no-repeat center center;
+     background-size: cover;
+     top:0; right: 0; left: 0; bottom: 0;
+   position: fixed;
+   z-index: 1000;
+}
+
+#planet0{
+  position: fixed;
+  z-index: 0;
+  top: 5%; right: 30%;
+  height: 10px;
+}
+#planet1{
+  position: fixed;
+  z-index: 1;
+  top: 10%; right: 15%;
+  height: 10%;
+}
+#earth{
+  top: 10%; left: 20%; right: 5%; bottom: 10%;
+  position: fixed;
+  z-index: 2;
+  height: 600px;
+}
+#station{
+  top: 40% ; left: 50%;
+  position: fixed;
+  z-index: 3;
+  height: 200px;
+}
+#glare{
+  top: 0; left: 0;
+  position: fixed;
+  z-index: 4;
+  height: 300px;
+}
+#moonsurface{
+  position: fixed;
+  z-index: 5;
+  bottom: 0;  left: 0;  right: 0;
+  height: 80%;
+}
+#spaceman{
+  position: fixed;
+  z-index: 6;
+  bottom: 40%; right: 20%;
+  height: 200px;
+}
+#moonrock2{
+  position: fixed;
+  z-index: 7;
+  bottom: 20%; left: -10% ;
+  height: 300px;
+}
+#moonrock1{
+  position: fixed;
+  z-index: 8;
+  bottom: 0; right:-10%;
+  height: 100%;
+}
+
+
+#text1{
+  padding: 10% 10% 10% 10% ;
+  top: 10%; left: 10%; right: 10%; bottom: 10%;
+  text-align: center;
+  font-size: 4em;
+  color: #989898;
+  z-index: 100;
+  position: fixed;
+  background-color: #000;
+  font-family: "Century Gothic";
+} 
+#text1 span{
+  font-size: 0.5em;
+}
+#textend, #textend2{
+  position: fixed;
+  top: 10%;
+  left: 40%;
+  font-size: 2em;
+  z-index: 100;
+  font-family: "Century Gothic";
+  color: #989898;
+}
+#textend span{
+  font-weight: bolder;
+  font-size: 2em;
+  color: white;
+}
+#textend2{
+  left: 40%; top: 70%;
+}
+#textend3{
+  bottom: 5%; right: 5%;
+  color: #989898;
+  z-index: 100;
+  position: fixed;
+  font-size: 1.5em;
+}
+#text2, #text3, #text4, #text5, #text6, #text7, #text8{
+  position: fixed;
+  z-index: 100;
+  font-size: 5em;
+  font-family: "Century Gothic";
+  bottom:15%; left: 5%;
+  -webkit-transform: skew(7deg) rotate(-15deg);
+  -moz-transform: skew(7deg) rotate(-15deg);
+  -o-transform: skew(7deg) rotate(-15deg);
+  -ms-transform: skew(7deg) rotate(-15deg);
+  transform: skew(7deg) rotate(-15deg);
+  color:#0f2a49;
+}
+#text3{
+  top: 35%; left: 60%;
+  -webkit-transform: skew(40deg);
+  -o-transform: skew(40deg);
+  -moz-transform: skew(40deg);
+  -ms-transform: skew(40deg);
+  transform: skew(40deg);
+}
+#text4{
+  top: 40%; left: 40%;
+  -webkit-transform: skew(0deg); 
+  -o-transform: skew(0deg);
+  -moz-transform: skew(0deg);
+  -ms-transform: skew(0deg);
+  transform: skew(0deg); 
+}
+#text5{
+  top: 20%; left: 60%;
+  -moz-transform: skew(0deg) rotate(30deg); 
+  -o-transform: skew(0deg) rotate(30deg); 
+  -ms-transform: skew(0deg) rotate(30deg); 
+  -webkit-transform: skew(0deg) rotate(30deg); 
+  transform: skew(0deg) rotate(30deg);  
+  color: #989898;
+}
+#text6, #text7, #text8{
+  top:30%; left: 30%;
+  -moz-transform: skew(0deg);
+  -o-transform: skew(0deg);
+  -ms-transform: skew(0deg);
+  -webkit-transform: skew(0deg);
+  transform: skew(0deg);
+  color: #989898;
+}
+  </style>
+  
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51999582-3', 'cs-trek.appspot.com');
+  ga('send', 'pageview');
+
+</script>
+
+  </head>
+  <body id="skrollr-body">
+
+    <div id="dvLoading" style="padding-top:5%;text-align: center;"><h1><b>PLEASE WAIT</b>...</h1><br/><h3 style="color:#a0a0a0;">"This server is powered by a lemon and two electrodes." :)</h3>
+    </div>
+
+  <div class="container-fluid">
+
+  <div id="text1" data-0="opacity: 1;" data-500="opacity: 0;">
+    <b>CS TREK</b>
+    <br/>(30-seconds to go...)<br/><br/>
+    <span>Scroll or press &nbsp;&darr;&nbsp; to continue...</span>
+  </div>
+  <div id="textend" data-30000="opacity:0;" data-32000="opacity:1;">
+    because,<br/><span>C</span>omputer<br/><span>S</span>cience<br/><span>TREK</span>
+  </div>
+  <div id="textend2" data-31000="opacity:0;" data-33000="opacity:1;">
+    has just begun.
+  </div>
+  <div id="textend3" data-32500="opacity:0;" data-33000="opacity:1;">
+    <a href="#">Restart</a>
+    <br/><a href="http://mananworks.blogspot.in/2014/06/computer-science-trek.html" target="_blank">About</a><br/><br/>made by :<br/><a href="http://www.mananworks.appspot.com" target="_blank">&#9786;manan</a></div>
+
+  <div id="text2" data-600="opacity: 0;" data-800="opacity: 1;" data-2800="opacity: 0;">
+    OPERATE (+ - * / %)<br/>
+    COMPARE (&lt; &gt; ==)
+  </div>
+  <div id="text3" data-2300="opacity: 0;" data-2500="opacity: 1;" data-4700="opacity: 0;">
+    DECIDE<br/>(if-else)
+  </div>
+  <div id="text4" data-4400="opacity: 0;" data-4600="opacity: 1;" data-8500="opacity: 0;">
+    PROCEED <br/>(algorithms)
+  </div>
+  <div id="text5" data-19500="opacity: 0;" data-20700="opacity: 1;" data-22700="opacity: 0;">
+    KEEP TRACK<br/>(variables)
+  </div>
+  <div id="text6" data-23000="opacity: 0;" data-24200="opacity: 1;" data-25400="opacity: 0;">
+    &amp; KEEP GOING...<br/>(loops)
+  </div>
+  <div id="text7" data-25500="opacity: 0;" data-26700="opacity: 1;" data-27900="opacity: 0;">
+    &amp; GOING...<br/>(recursion)
+  </div>
+  <div id="text8" data-28000="opacity: 0;" data-29100="opacity: 1;" data-30000="opacity: 0;">
+    &amp; GOING...<br/>
+  </div>
+      <img src="static/img/planet0.png" id="planet0" class="img-responsive" data-18000="transform: scale(1) translate(0px, 0px);" data-24000="transform: scale(1.1) translate(20px, 0px);" data-30000="transform: scale(1.2) translate(50px, 10px);"/>
+      <img src="static/img/planet1.png" id="planet1" class="img-responsive" data-18000="transform: scale(1) translate(0px, 0px) rotate(0deg);" data-24000="transform: scale(1.3) translate(23px, 9px) rotate(6deg);" data-30000="transform: scale(1.6) translate(50px, 15px) rotate(15deg);"/>
+
+      <img src="static/img/earth.png" id="earth" class="img-responsive" data-6000="transform: scale(1) rotate(0deg);" data-18000="transform: scale(1.2) rotate(3deg);" data-24000="transform: scale(1.5) rotate(5deg);" data-30000="transform: scale(1.8) rotate(7deg);"/>
+      <img src="static/img/station.png" id="station" class="img-responsive" data-12000="transform: scale(0.2) rotate(0deg) translate(0px, 0px);" data-18000="transform: scale(0.5) rotate(10deg) translate(100px, 0px);" data-24000="transform: scale(1.5) rotate(25deg) translate(200px, 0px);" data-30000="transform: scale(2.5) rotate(40deg) translate(450px, 0px);"/>
+
+      <img src="static/img/glare.png" id="glare" class="img-responsive" data-8000="opacity: 0;  transform: rotate(0deg)" data-12000="opacity: 0.2;  transform: rotate(0deg)" data-18000="opacity:0.8; transform: rotate(10deg);" data-24000="opacity:0.8; transform: rotate(30deg);" data-30000="opacity:0.8; transform: rotate(40deg);"/>
+
+      <img src="static/img/moonsurface.png" id="moonsurface" class="img-responsive" data-1000="transform: scale(1) translate(0px,0px);" data-3000="transform: scale(1.1) translate(0px,50px);"  data-6000=" transform: scale(1.2) translate(0px, 100px);" data-12000="transform: scale(1.4) translate(0px, 200px);" data-18000="transform: scale(2) translate(0px, 400px);"/>
+      <img src="static/img/spaceman.png" id="spaceman" class="img-responsive" data-1000="transform: scale(1) translate(0px,0px) rotate(0deg);" data-3000="transform: scale(1.4) translate(120px, 120px) rotate(-5deg);" data-6000="transform: scale(1.7) translate(250px, 250px) rotate(-10deg);"/>
+      <img src="static/img/moonrock2.png" id="moonrock2" class="img-responsive" data-1000="transform: scale(1) translate(0px,0px);" data-3000="transform: scale(1.4) translate(-120px,120px);" data-6000="transform: scale(1.7) translate(-290px, 290px);"/>
+      <img src="static/img/moonrock1.png" id="moonrock1" class="img-responsive" data-1000="transform: scale(1) translate(0px,0px);"  data-3000="transform: scale(1.3) translate(320px, 320px);"/>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="static/js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/skrollr.min.js"></script>
+    <script>
+     var s = skrollr.init();
+     $(window).load(function(){
+      $('#dvLoading').fadeOut(2000);
+      });
+    </script>
+
+  </body>
+</html>
