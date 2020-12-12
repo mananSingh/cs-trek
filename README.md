@@ -1,9 +1,6 @@
 # cs-trek
 A Parallax scrolling web experiment. (scrolling 'INTO' webpage)
 
-*website link*: [www.cs-trek.appspot.com] (http://www.cs-trek.appspot.com)
-
-*Details*: [blog] (http://mananworks.blogspot.in/2014/06/computer-science-trek.html)
 
 ### Info
 
@@ -13,10 +10,10 @@ It offers an **'INTO'-parallax** scrolling experience; **unlike ever before** (J
 
 ### Tools Used
 
-css3
-skrollr.js
-photoshop
-google app engine
+css3,
+skrollr.js,
+photoshop,
+google app engine,
 google analytics
 
 ### Date of completion
